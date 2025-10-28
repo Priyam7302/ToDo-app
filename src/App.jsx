@@ -32,7 +32,13 @@ const App = () => {
       setEditId(null);
     }
     else {
-      setTasks([...tasks, { id: Date.now(), task: input }]);
+      if (input.trim().length===0) {
+        return
+      }
+      else {
+        setTasks([...tasks, { id: Date.now(), task: input }]);
+      }
+
     }
     setInput("");
   }
@@ -43,13 +49,20 @@ const App = () => {
     const objToEdit = tasks.find((obj) => {
       return obj.id === idToEdit;
     })
-    setInput(objToEdit.task);
+    if (objToEdit.task.trim().length === 0) {
+      setInput("");
+      return 
+    }
+    else {
+      
+      setInput(objToEdit.task.trim());
+    }
   }
-  
+
   return (
     <div>
-      <Form input={input} setInput={setInput} handleSubmit={handleSubmit} isEditing={isEditing}/>
-      <Todo tasks={tasks} handleDelete={handleDelete} handleEdit={handleEdit}/>
+      <Form input={input} setInput={setInput} handleSubmit={handleSubmit} isEditing={isEditing} />
+      <Todo tasks={tasks} handleDelete={handleDelete} handleEdit={handleEdit} />
     </div>
   );
 }
