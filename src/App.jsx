@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Form from '../components/Form';
-import Todo from '../components/Todo';
-import './todo.css';
+import Form from './components/Form';
+import Todo from './components/Todo';
+import './Todo.css';
 const App = () => {
   const [input, setInput] = useState("");
   const [tasks, setTasks] = useState([]);
