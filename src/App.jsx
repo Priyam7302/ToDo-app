@@ -10,6 +10,7 @@ const App = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [editId, setEditId] = useState(null);
 
+
   function handleDelete(idToDelete) {
     setTasks(
       tasks.filter((obj) => {
@@ -58,11 +59,20 @@ const App = () => {
       setInput(objToEdit.task.trim());
     }
   }
+  
+  function handleCompletion(e, idToMarkComplete) {
+    setTasks(tasks.map((obj) => {
+      if (obj.id === idToMarkComplete) {
+          
+      }
+
+    }));
+  }
 
   return (
     <div>
       <Form input={input} setInput={setInput} handleSubmit={handleSubmit} isEditing={isEditing} />
-      <Todo tasks={tasks} handleDelete={handleDelete} handleEdit={handleEdit} />
+      <Todo tasks={tasks} handleDelete={handleDelete} handleEdit={handleEdit} handleCompletion={handleCompletion}/>
     </div>
   );
 }
