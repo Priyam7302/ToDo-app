@@ -2,121 +2,172 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", monospace;
 }
 
 body {
-  background: linear-gradient(135deg, #7dd3fc, #99f6e4);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)),
+    url("./assets/rrr.jpg") no-repeat center center/cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
+  align-items: center;
+  padding-top: 80px;
+  color: #e0f7fa;
 }
 
 h1 {
-  margin-top: 2rem;
-  font-size: 2.5rem;
-  color: #065f46;
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: #00e5ff;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 12px rgba(0, 229, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
-#todo {
-  background: white;
-  margin-top: 2rem;
-  /* width: 90%; */
-  /* max-width: 500px; */
-  padding: 2rem;
-  border-radius: 15px;
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+h1 svg {
+  font-size: 2.4rem;
+  color: #00e5ff;
+  filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.7));
 }
 
 form {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
   gap: 10px;
+  width: 90%;
+  max-width: 600px;
+  padding: 20px 25px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+  transition: all 0.3s ease-in-out;
+}
+
+form:hover {
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
 }
 
 input[type="text"] {
   flex: 1;
-  padding: 0.8rem 1rem;
-  border: 2px solid #94a3b8;
-  border-radius: 8px;
-  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
   outline: none;
-  transition: 0.3s ease;
+  color: #e0f7fa;
+  font-size: 1rem;
+  padding: 12px 15px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
 }
 
 input[type="text"]:focus {
-  border-color: #06b6d4;
-  box-shadow: 0 0 6px rgba(6, 182, 212, 0.4);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
 }
 
 button {
-  padding: 0.8rem 1.5rem;
-  border: none;
-  background-color: #14b8a6;
+  background: linear-gradient(135deg, #00bcd4, #2196f3);
   color: white;
-  font-size: 1rem;
+  border: none;
+  outline: none;
+  padding: 12px 20px;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 0.6px;
+  box-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
+  transition: 0.3s ease-in-out;
 }
 
 button:hover {
-  background-color: #0f766e;
-  transform: scale(1.05);
-}
-
-button:active {
-  transform: scale(0.95);
+  transform: scale(1.07);
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.8);
 }
 
 ul {
+  margin-top: 35px;
   list-style: none;
-  margin-top: 1rem;
-  padding: 0;
+  width: 90%;
+  max-width: 600px;
 }
 
 li {
-  
-  background: #ecfdf5;
-  border: 1px solid #d1fae5;
-  border-radius: 6px;
-  padding: 0.7rem 1rem;
-  margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin-bottom: 15px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  transition: 0.3s ease;
+  color: #e0ffff;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.1);
+  text-transform: capitalize;
 }
 
-li span {
-  font-size: 1rem;
-  color: #065f46;
+li:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
 }
 
-span{
-    display: flex;
-    gap:10px;
+.task-text {
+  flex: 1;
+  color: #e0f7fa;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
 }
 
-.deletebtn:hover{
-    transform: scale(1.8);
+li.completed .task-text {
+  color: #a5dff1;
+  text-decoration: line-through;
+  opacity: 0.7;
 }
 
-
-h1 svg {
-    color: #14b8a6;
-    font-size: 4.2rem;
-    vertical-align: middle;
-    transition: transform 0.3s ease, color 0.3s ease;
+input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 10px;
+  accent-color: #00e5ff;
+  cursor: pointer;
 }
 
-h1 svg:hover {
-    color: #0f766e;
-    transform: rotate(10deg) scale(1.2);
+span .deletebtn {
+  font-size: 1.6rem;
+  cursor: pointer;
+  margin-left: 12px;
+  color: #00e5ff;
+  transition: 0.3s ease;
 }
 
+span .deletebtn:hover {
+  color: #f44336;
+  transform: scale(1.2);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 229, 255, 0.4);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 255, 0.7);
+}
